@@ -233,6 +233,28 @@ const WEAPONS = [
   { n: "Astral Vulture's Crimson Plumage", t: "bow", r: 5, atk: 608, s: ["cd", 66.2] },
   { n: "Prototype Archaic", t: "claymore", r: 4, atk: 565, s: ["atkp", 27.6] },
   { n: "Festering Desire", t: "sword", r: 4, atk: 510, s: ["er", 45.9] },
+  // assinaturas que faltavam
+  { n: "A Thousand Blazing Suns", t: "claymore", r: 5, atk: 741, s: ["cr", 11] },
+  { n: "Vortex Vanquisher", t: "polearm", r: 5, atk: 608, s: ["atkp", 49.6] },
+  { n: "Summit Shaper", t: "sword", r: 5, atk: 608, s: ["atkp", 49.6] },
+  { n: "The Unforged", t: "claymore", r: 5, atk: 608, s: ["atkp", 49.6] },
+  { n: "Azurelight", t: "sword", r: 5, atk: 674, s: ["cr", 22.1] },
+  { n: "Starcaller's Watch", t: "catalyst", r: 5, atk: 542, s: ["em", 265] },
+  { n: "Sunny Morning Sleep-In", t: "catalyst", r: 5, atk: 542, s: ["em", 265] },
+  { n: "Vivid Notions", t: "catalyst", r: 5, atk: 674, s: ["cd", 44.1] },
+  { n: "Nocturne's Curtain Call", t: "catalyst", r: 5, atk: 542, s: ["cd", 88.2] },
+  { n: "Athame Artis", t: "sword", r: 5, atk: 608, s: ["cr", 33.1] },
+  { n: "Bloodsoaked Ruins", t: "polearm", r: 5, atk: 674, s: ["cr", 22.1] },
+  { n: "Fractured Halo", t: "polearm", r: 5, atk: 608, s: ["cd", 66.2] },
+  { n: "The Daybreak Chronicles", t: "bow", r: 5, atk: 674, s: ["cd", 44.1] },
+  { n: "Nightweaver's Looking Glass", t: "catalyst", r: 5, atk: 542, s: ["em", 265] },
+  { n: "Golden Frostbound Oath", t: "bow", r: 5, atk: 542, s: ["cd", 88.2] },
+  { n: "Disaster and Remorse", t: "polearm", r: 5, atk: 674, s: ["cr", 22.1] },
+  { n: "Reliquary of Truth", t: "catalyst", r: 5, atk: 542, s: ["cd", 88.2] },
+  { n: "Angelos' Heptades", t: "catalyst", r: 5, atk: 741, s: ["atkp", 16.5] },
+  { n: "Gest of the Mighty Wolf", t: "claymore", r: 5, atk: 608, s: ["cr", 33.1] },
+  { n: "Lightbearing Moonshard", t: "sword", r: 5, atk: 542, s: ["cd", 88.2] },
+  { n: "A Teaspoon of Transcendence", t: "claymore", r: 5, atk: 674, s: ["cd", 44.1] },
 ];
 
 /* ---------- Personagens ----------
@@ -1046,6 +1068,201 @@ function analyzeTeam(team) {
   return out;
 }
 
+/* Status base no nível 90: [HP, ATQ, DEF]. Gerado por genbase.cjs. */
+const BASE = {
+  hutao: [15552,106.4,876],
+  arlecchino: [13103,342.0,765],
+  lyney: [11021,318.1,538],
+  yoimiya: [10164,322.9,615],
+  diluc: [12981,334.8,784],
+  klee: [10287,310.9,615],
+  mavuika: [12552,358.8,792],
+  xiangling: [10875,225.1,669],
+  bennett: [12397,191.2,771],
+  neuvillette: [14695,208.3,576],
+  furina: [15307,244.0,696],
+  xingqiu: [10222,201.8,758],
+  yelan: [14450,244.0,548],
+  kokomi: [13471,234.4,657],
+  mona: [10409,287.0,653],
+  nilou: [15185,229.6,729],
+  childe: [13103,301.4,815],
+  kazuha: [13348,296.6,807],
+  venti: [10531,263.1,669],
+  sucrose: [9244,169.9,703],
+  xianyun: [10409,334.8,573],
+  jean: [14695,239.2,769],
+  wanderer: [10164,327.7,607],
+  xiao: [12736,349.2,799],
+  faruzan: [9570,196.5,628],
+  raiden: [12907,337.2,789],
+  yae: [10372,339.6,569],
+  fischl: [9189,244.3,594],
+  keqing: [13103,322.9,799],
+  cyno: [12491,318.1,859],
+  clorinde: [12956,337.2,784],
+  kuki: [12289,212.4,751],
+  ayaka: [12858,342.0,784],
+  ganyu: [9797,334.8,630],
+  wriothesley: [13593,310.9,763],
+  shenhe: [12993,303.8,830],
+  escoffier: [13348,346.8,732],
+  rosaria: [12289,240.0,710],
+  diona: [9570,212.4,601],
+  layla: [11092,216.6,655],
+  zhongli: [14695,251.1,738],
+  navia: [12650,351.6,793],
+  itto: [12858,227.2,959],
+  noelle: [12071,191.2,799],
+  xilonen: [12405,275.1,930],
+  chiori: [11438,322.9,953],
+  albedo: [13226,251.1,876],
+  yunjin: [10657,191.2,734],
+  nahida: [10360,299.0,630],
+  alhaitham: [13348,313.3,782],
+  kinich: [12858,332.5,802],
+  baizhu: [13348,192.5,500],
+  yaoyao: [12289,212.4,751],
+  tighnari: [10850,267.9,630],
+  amber: [9461,223.0,601],
+  yanfei: [9352,240.0,587],
+  xinyan: [11201,248.5,799],
+  thoma: [10331,201.8,751],
+  dehya: [15675,265.5,628],
+  gaming: [11419,301.6,703],
+  chevreuse: [11962,193.3,605],
+  barbara: [9787,159.3,669],
+  ayato: [13715,299.0,769],
+  candace: [10875,212.4,683],
+  mualani: [15185,181.8,570],
+  sigewinne: [13348,192.5,500],
+  dahlia: [12506,189.0,560],
+  sayu: [11854,244.3,745],
+  heizou: [10657,225.1,684],
+  lynette: [12397,231.5,712],
+  lanyan: [9244,250.6,580],
+  mizuki: [12736,215.3,757],
+  ifa: [10081,178.4,605],
+  chasca: [9797,346.8,615],
+  lisa: [9570,231.5,573],
+  beidou: [13050,225.1,648],
+  razor: [11962,233.6,751],
+  kujousara: [9570,195.4,628],
+  dori: [12397,223.0,723],
+  sethos: [9787,227.3,560],
+  ororon: [9244,244.3,587],
+  iansan: [10657,257.0,638],
+  varesa: [12699,356.4,782],
+  kaeya: [11636,223.0,792],
+  chongyun: [10984,223.0,648],
+  qiqi: [12368,287.0,922],
+  eula: [13226,342.0,751],
+  mika: [12506,223.0,713],
+  charlotte: [10766,173.1,546],
+  freminet: [12071,254.9,708],
+  citlali: [11634,126.8,763],
+  ningguang: [9787,212.4,573],
+  gorou: [9570,182.7,648],
+  kachina: [11799,216.6,792],
+  collei: [9787,199.7,601],
+  kaveh: [11962,233.6,751],
+  kirara: [12180,223.0,546],
+  emilie: [13568,334.8,730],
+  travelerdendro: [10875,212.4,683],
+  travelerpyro: [10875,212.4,683],
+  aino: [11201,242.1,607],
+  aloy: [10899,233.9,676],
+  columbina: [14695,95.7,515],
+  durin: [12430,346.8,822],
+  flins: [12491,351.6,809],
+  illuga: [11962,191.2,814],
+  ineffa: [12613,330.1,828],
+  jahoda: [9646,223.0,580],
+  lauma: [10654,255.0,669],
+  linnea: [9895,143.5,907],
+  lohen: [12858,344.4,784],
+  nefer: [12704,344.4,799],
+  nicole: [10409,342.0,563],
+  prune: [9679,220.9,580],
+  skirk: [12417,358.8,806],
+  varka: [12613,352.8,795],
+  manekin: [10875,212.4,683],
+  zibai: [12919,224.8,957],
+  sandrone: [13226,342.0,752],
+  odette: [12981,334.8,787],
+  alyosha: [11962,265.5,703],
+};
+
+/* Arma-assinatura: 5★ do mesmo tipo lançada na versão do personagem. */
+const ASSINATURA = {
+  hutao: "Staff of Homa",
+  arlecchino: "Crimson Moon's Semblance",
+  lyney: "The First Great Magic",
+  yoimiya: "Thundering Pulse",
+  mavuika: "A Thousand Blazing Suns",
+  neuvillette: "Tome of the Eternal Flow",
+  furina: "Splendor of Tranquil Waters",
+  yelan: "Aqua Simulacra",
+  kokomi: "Everlasting Moonglow",
+  nilou: "Key of Khaj-Nisut",
+  kazuha: "Freedom-Sworn",
+  xianyun: "Crane's Echoing Call",
+  wanderer: "Tulaytullah's Remembrance",
+  xiao: "Staff of Homa",
+  raiden: "Engulfing Lightning",
+  yae: "Kagura's Verity",
+  cyno: "Staff of the Scarlet Sands",
+  clorinde: "Absolution",
+  ayaka: "Mistsplitter Reforged",
+  wriothesley: "Cashflow Supervision",
+  shenhe: "Calamity Queller",
+  escoffier: "Symphonist of Scents",
+  zhongli: "Vortex Vanquisher",
+  navia: "Verdict",
+  itto: "Redhorn Stonethresher",
+  xilonen: "Peak Patrol Song",
+  chiori: "Uraku Misugiri",
+  albedo: "Summit Shaper",
+  yunjin: "Calamity Queller",
+  nahida: "A Thousand Floating Dreams",
+  alhaitham: "Light of Foliar Incision",
+  kinich: "Fang of the Mountain King",
+  baizhu: "Jadefall's Splendor",
+  tighnari: "Hunter's Path",
+  xinyan: "The Unforged",
+  dehya: "Beacon of the Reed Sea",
+  ayato: "Haran Geppaku Futsu",
+  candace: "Staff of the Scarlet Sands",
+  mualani: "Surf's Up",
+  sigewinne: "Silvershower Heartstrings",
+  dahlia: "Azurelight",
+  lanyan: "Starcaller's Watch",
+  mizuki: "Sunny Morning Sleep-In",
+  chasca: "Astral Vulture's Crimson Plumage",
+  sethos: "Silvershower Heartstrings",
+  ororon: "Astral Vulture's Crimson Plumage",
+  varesa: "Vivid Notions",
+  eula: "Song of Broken Pines",
+  citlali: "Starcaller's Watch",
+  collei: "Hunter's Path",
+  emilie: "Lumidouce Elegy",
+  columbina: "Nocturne's Curtain Call",
+  durin: "Athame Artis",
+  flins: "Bloodsoaked Ruins",
+  ineffa: "Fractured Halo",
+  jahoda: "The Daybreak Chronicles",
+  lauma: "Nightweaver's Looking Glass",
+  linnea: "Golden Frostbound Oath",
+  lohen: "Disaster and Remorse",
+  nefer: "Reliquary of Truth",
+  nicole: "Angelos' Heptades",
+  prune: "Angelos' Heptades",
+  skirk: "Azurelight",
+  varka: "Gest of the Mighty Wolf",
+  zibai: "Lightbearing Moonshard",
+  sandrone: "A Teaspoon of Transcendence",
+};
+
 /* Conjuntos: bônus de 2 peças estruturado + textos oficiais.
    Gerado por gensets.cjs a partir do genshin-db — não editar à mão.
    p2 aplica automaticamente. el != null significa que o bônus só vale
@@ -1129,8 +1346,9 @@ const resMult = (res) => (res < 0 ? 1 - res / 2 : res < 0.75 ? 1 - res : 1 / (1 
 /* Status completos: bases, peças, conjuntos e ajustes manuais.
    Devolve também `escopo`, com os bônus que valem só para certos golpes. */
 function statsCompletos(b) {
-  const d = DANO[b.charId];
-  if (!d) return null;
+  const bs = BASE[b.charId];
+  if (!bs) return null;
+  const base = { hp: bs[0], atk: bs[1], def: bs[2] };
   const ch = CHAR_BY_ID[b.charId];
   const w = WPN_BY_NAME[b.weapon];
 
@@ -1167,11 +1385,11 @@ function statsCompletos(b) {
   const aj = b.ajustes || {};
   ["dmg", "atkp", "cr", "cd", "em"].forEach((k) => add(k, Number(aj[k]) || 0));
 
-  const atkBase = d.base.atk + (w ? w.atk : 0);
+  const atkBase = base.atk + (w ? w.atk : 0);
   return {
     atk: atkBase * (1 + a.atkp / 100) + a.atk,
-    hp: d.base.hp * (1 + a.hpp / 100) + a.hp,
-    def: d.base.def * (1 + a.defp / 100) + a.def,
+    hp: base.hp * (1 + a.hpp / 100) + a.hp,
+    def: base.def * (1 + a.defp / 100) + a.def,
     cr: a.cr / 100, cd: a.cd / 100, em: a.em,
     bonusDano: a.dmg / 100,
     escopo, atkBase,
@@ -1723,9 +1941,17 @@ export default function App() {
                 <Sel value={b.weapon} onChange={(v) => update({ weapon: v })} disabled={!char}>
                   <option value="">{char ? "— escolher —" : "escolha o personagem"}</option>
                   {WEAPONS.filter((w) => !char || w.t === char.wt)
-                    .sort((a, z) => z.r - a.r || a.n.localeCompare(z.n))
+                    .sort((a, z) => {
+                      const sg = char ? ASSINATURA[char.id] : null;
+                      if (a.n === sg) return -1;
+                      if (z.n === sg) return 1;
+                      return z.r - a.r || a.n.localeCompare(z.n);
+                    })
                     .map((w) => (
-                      <option key={w.n} value={w.n}>{w.n} · {SUB_LABEL[w.s[0]]}</option>
+                      <option key={w.n} value={w.n}>
+                        {char && ASSINATURA[char.id] === w.n ? "★ assinatura · " : ""}
+                        {w.n} · {SUB_LABEL[w.s[0]]}
+                      </option>
                     ))}
                 </Sel>
               </label>
