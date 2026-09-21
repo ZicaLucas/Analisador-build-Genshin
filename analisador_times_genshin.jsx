@@ -1622,18 +1622,34 @@ export default function App() {
   const update = (patch) => setTeam((t) => t.map((x, i) => (i === active ? { ...x, ...patch } : x)));
   const updatePiece = (k, p) => update({ pieces: { ...b.pieces, [k]: p } });
 
+  /* Persistência: usa a API do Claude quando existe, senão localStorage.
+     Assim o mesmo arquivo funciona publicado aqui e no seu próprio host. */
+  const armazenar = {
+    async ler() {
+      if (typeof window !== "undefined" && window.storage) {
+        const r = await window.storage.get("time-salvo");
+        return r?.value ?? null;
+      }
+      return localStorage.getItem("time-salvo");
+    },
+    async gravar(v) {
+      if (typeof window !== "undefined" && window.storage) return window.storage.set("time-salvo", v);
+      localStorage.setItem("time-salvo", v);
+    },
+  };
+
   useEffect(() => {
     (async () => {
       try {
-        const res = await window.storage.get("time-salvo");
-        if (res?.value) setTeam(JSON.parse(res.value));
+        const v = await armazenar.ler();
+        if (v) setTeam(JSON.parse(v));
       } catch { /* nada salvo ainda */ }
     })();
   }, []);
 
   const save = async () => {
     try {
-      await window.storage.set("time-salvo", JSON.stringify(team));
+      await armazenar.gravar(JSON.stringify(team));
       setSaveMsg("Time salvo.");
     } catch {
       setSaveMsg("Não foi possível salvar agora.");
