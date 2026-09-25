@@ -1,35 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
 
-/* ============================================================
-   FICHA DE CAMPO — Analisador de builds de time (Genshin)
-   Arquivo único. Sem assets do jogo: cores e tipografia apenas.
-   ============================================================ */
-
-/* ============================================================
-   IMAGENS — onde colocar seus arquivos
-   ------------------------------------------------------------
-   assets/
-     logo/logo.png
-     personagens/avatar/{id}.png        ex: hutao.png, kazuha.png
-     personagens/splash/{id}.png        ex: hutao.png   (arte grande, fundo da ficha)
-     armas/{slug}.png                   ex: staff-of-homa.png
-     artefatos/{slug-conjunto}/flower.png
-                                 plume.png
-                                 sands.png
-                                 goblet.png
-                                 circlet.png
-                                 set.png   <- coringa: usado se a peça faltar
-
-   Regra do slug: minúsculas, apóstrofos removidos, resto vira hífen.
-     "Wolf's Gravestone"        -> wolfs-gravestone
-     "Crimson Witch of Flames"  -> crimson-witch-of-flames
-
-   Falta um arquivo? O app mostra um espaço reservado com o caminho
-   esperado no tooltip e segue funcionando normalmente.
-   Se você hospedar as imagens em outro lugar, troque só ASSETS.base
-   (aceita caminho relativo ou URL completa).
-   ============================================================ */
-
 function slug(s) {
   return String(s).toLowerCase()
     .replace(/['’]/g, "")
@@ -233,7 +203,6 @@ const WEAPONS = [
   { n: "Astral Vulture's Crimson Plumage", t: "bow", r: 5, atk: 608, s: ["cd", 66.2] },
   { n: "Prototype Archaic", t: "claymore", r: 4, atk: 565, s: ["atkp", 27.6] },
   { n: "Festering Desire", t: "sword", r: 4, atk: 510, s: ["er", 45.9] },
-  // assinaturas que faltavam
   { n: "A Thousand Blazing Suns", t: "claymore", r: 5, atk: 741, s: ["cr", 11] },
   { n: "Vortex Vanquisher", t: "polearm", r: 5, atk: 608, s: ["atkp", 49.6] },
   { n: "Summit Shaper", t: "sword", r: 5, atk: 608, s: ["atkp", 49.6] },
@@ -257,13 +226,7 @@ const WEAPONS = [
   { n: "A Teaspoon of Transcendence", t: "claymore", r: 5, atk: 674, s: ["cd", 44.1] },
 ];
 
-/* ---------- Personagens ----------
-   asc: status de ascensão no 90 | er: alvo de Recarga (1.0 = 100%)
-   main: opções aceitáveis por slot, a 1ª é a preferida
-   subs: substats que "contam" (em ordem de prioridade)
-   tal: ordem de prioridade dos talentos
-   tags: papel no time
-*/
+//Personagens
 const C = (o) => o;
 const CHARS = [
   // PYRO
@@ -582,8 +545,7 @@ const CHARS = [
 
 const CHAR_BY_ID = Object.fromEntries(CHARS.map((c) => [c.id, c]));
 
-/* Constelações: qual talento cada uma eleva em +3, e os nomes.
-   Gerado a partir do genshin-db — não editar à mão. */
+// Constelações: qual talento cada uma eleva em +3, e os nomes.
 const CONS = {
   hutao: { t3:"skill", t5:"burst", nomes:["Crimson Bouquet","Ominous Rainfall","Lingering Carmine","Garden of Eternal Rest","Floral Incense","Butterfly's Embrace"] },
   arlecchino: { t3:null, t5:"burst", nomes:["\"All Reprisals and Arrears, Mine to Bear...\"","\"All Rewards and Retribution, Mine to Bestow...\"","\"You Shall Become a New Member of Our Family...\"","\"You Shall Love and Protect Each Other Henceforth...\"","\"For Alone, We Are as Good as Dead...\"","\"From This Day On, We Shall Delight in New Life Together.\""] },
@@ -719,7 +681,7 @@ const RESONANCE = {
   anemo: "Vento Impetuoso: -5s de recarga, -15% de resistência.",
 };
 
-/* ---------- Estado ---------- */
+//Estado
 
 const blankPiece = (fixed) => ({
   lvl: 20,
@@ -745,7 +707,7 @@ const blankBuild = () => ({
   },
 });
 
-/* ---------- Cálculos ---------- */
+//Cálculos
 
 function mainValue(key, lvl) {
   const max = MAINMAX[key];
@@ -790,8 +752,9 @@ const SEV = { crit: 3, warn: 2, tip: 1, ok: 0 };
 
 const lvAll = (b) => b.talents;
 
-/* Níveis efetivos: C3 e C5 dão +3 no talento correspondente.
-   O usuário digita o nível BASE (1–10); aqui somamos o bônus. */
+// Níveis efetivos: C3 e C5 dão +3 no talento correspondente.
+// O usuário digita o nível BASE (1–10); aqui somamos o bônus.
+
 function niveisEfetivos(b) {
   const c = consDe(b.charId);
   const n = Number(b.cons) || 0;
@@ -1068,7 +1031,7 @@ function analyzeTeam(team) {
   return out;
 }
 
-/* Status base no nível 90: [HP, ATQ, DEF]. Gerado por genbase.cjs. */
+// Status base no nível 90: [HP, ATQ, DEF]. Gerado por genbase.cjs. 
 const BASE = {
   hutao: [15552,106.4,876],
   arlecchino: [13103,342.0,765],
@@ -1193,7 +1156,7 @@ const BASE = {
   alyosha: [11962,265.5,703],
 };
 
-/* Arma-assinatura: 5★ do mesmo tipo lançada na versão do personagem. */
+// Arma-assinatura: 5★ do mesmo tipo lançada na versão do personagem. 
 const ASSINATURA = {
   hutao: "Staff of Homa",
   arlecchino: "Crimson Moon's Semblance",
@@ -1263,11 +1226,12 @@ const ASSINATURA = {
   sandrone: "A Teaspoon of Transcendence",
 };
 
-/* Conjuntos: bônus de 2 peças estruturado + textos oficiais.
-   Gerado por gensets.cjs a partir do genshin-db — não editar à mão.
-   p2 aplica automaticamente. el != null significa que o bônus só vale
-   se o elemento do personagem for esse. O 4pc fica como texto: é
-   condicional demais para automatizar, então vai nos ajustes manuais. */
+// Conjuntos: bônus de 2 peças estruturado + textos oficiais.
+// Gerado por gensets.cjs a partir do genshin-db — não editar à mão.
+// p2 aplica automaticamente. el != null significa que o bônus só vale
+// se o elemento do personagem for esse. O 4pc fica como texto: é
+// condicional demais para automatizar, então vai nos ajustes manuais.
+
 const CONJUNTOS = {
   "Gladiator's Finale": { p2: [["atkp",18]], el: null, t2: "ATK +18%.", t4: "If the wielder of this artifact set uses a Sword, Claymore or Polearm, increases their Normal Attack DMG by 35%." },
   "Wanderer's Troupe": { p2: [["em",80]], el: null, t2: "Increases Elemental Mastery by 80.", t4: "Increases Charged Attack DMG by 35% if the character uses a Catalyst or a Bow." },
@@ -1307,12 +1271,12 @@ const CONJUNTOS = {
   "Finale of the Deep Galleries": { p2: [["dmg",15]], el: "cryo", t2: "Cryo DMG Bonus +15%", t4: "When the equipping character has 0 Elemental Energy, Normal Attack DMG is increased by 60% and Elemental Burst DMG is increased by 60%. After the equipping character deals Normal Attack DMG, the aforementioned Elemental Burst effect will stop applying for 6s. After the equipping character deals Elemental Burst DMG, the aforementioned Normal Attack effect will stop applying for 6s. This effect can trigger even if the equipping character is off the field." },
 };
 
-/* =============================================================
+/*
    DPS DA COMPOSIÇÃO
    Rotações são SUAS. Defina abaixo e rode `node gerar-dados.cjs`
    para o app buscar os multiplicadores de talento na base oficial.
    Quem não tiver rotação aqui simplesmente não entra na tabela.
-   ============================================================= */
+*/
 
 const ROTACOES = {
   hutao: {
@@ -1327,18 +1291,18 @@ const ROTACOES = {
     passiva: (st, ctx) => ({ ...st, atk: st.atk + Math.min(st.hp * 0.0596, ctx.atkBase * 4) }),
   },
 };
-/* FIM ROTACOES */
+//FIM ROTACOES
 
-/* INICIO DANO — gerado por gerar-dados.cjs, nao editar */
+// INICIO DANO — gerado por gerar-dados.cjs, nao editar 
 const DANO = {
   hutao: { base: { hp: 15552, atk: 106.4, def: 876 }, mult: {
     "combat1.param8": [1.3596,1.4523,1.545,1.6686,1.7613,1.86945,2.0085,2.14755,2.2866,2.42565,2.5647,2.70375,2.8428,2.98185,3.1209],
     "combat3.param1": [3.03272,3.21432,3.39592,3.632,3.8136,3.9952,4.23128,4.46736,4.70344,4.93952,5.1756,5.41168,5.64776,5.88384,6.11992]
   } },
 };
-/* FIM DANO */
+//FIM DANO
 
-/* ---------- motor de dano ---------- */
+//motor de dano 
 
 const defMult = (nivelInimigo) => 190 / (190 + (nivelInimigo + 100));
 const resMult = (res) => (res < 0 ? 1 - res / 2 : res < 0.75 ? 1 - res : 1 / (1 + 4 * res));
@@ -1428,7 +1392,7 @@ function dpsDoMembro(b, janela, inimigo) {
   return { total, dps: total / janela, porCiclo, ciclos, tempo: rot.tempo, nota: rot.nota, detalhe };
 }
 
-/* ---------- Exemplo pronto ---------- */
+//Exemplo pronto
 function exampleTeam() {
   const t = [blankBuild(), blankBuild(), blankBuild(), blankBuild()];
   t[0] = {
@@ -1478,7 +1442,7 @@ function exampleTeam() {
   return t;
 }
 
-/* ---------- Componentes ---------- */
+// Componentes 
 
 function Beam({ cr, cd }) {
   const ratio = cr > 0 ? cd / cr : 0;
