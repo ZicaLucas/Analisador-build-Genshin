@@ -1,0 +1,6 @@
+Personagem
+  conjunto: 
+  ampulheta/cálice/coroa:  
+  substats:  
+  recarga: 
+  talentos:  

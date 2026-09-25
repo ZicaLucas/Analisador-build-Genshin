@@ -30,7 +30,7 @@ function Img({ src, fallback, alt, className }) {
   );
 }
 
-/* ---------- Tabelas de referência ---------- */
+/* Tabelas de referência */
 
 const EL = {
   pyro:    { n: "Pyro",    c: "#F0793B" },
@@ -94,7 +94,7 @@ const SETS = [
   "Long Night's Oath", "Finale of the Deep Galleries",
 ];
 
-/* ---------- Armas (base ATQ no 90 + status secundário) ---------- */
+/* Armas: ATQ base no 90 e status secundário */
 const WEAPONS = [
   // Espadas
   { n: "Mistsplitter Reforged", t: "sword", r: 5, atk: 674, s: ["cd", 44.1] },
@@ -486,7 +486,7 @@ const CHARS = [
   C({ id:"candace", n:"Candace", el:"hydro", wt:"polearm", asc:["hpp",24], role:"Buffer / escudo", tags:["shielder","buffer"], sets:[{n:"Noblesse Oblige",p:4},{n:"Tenacity of the Millelith",p:4}], main:{sands:["hpp","er"],goblet:["hpp"],circlet:["hpp"]}, subs:["hpp","er"], er:2.0, tal:["burst","skill","na"], wpns:["Favonius Lance","Black Tassel","Engulfing Lightning","Skyward Spine"] }),
   C({ id:"mualani", n:"Mualani", el:"hydro", wt:"catalyst", asc:["cr",24.2], role:"DPS principal", tags:["dps"], sets:[{n:"Heart of Depth",p:4},{n:"Nymph's Dream",p:4}], main:{sands:["hpp"],goblet:["dmg"],circlet:["cd","cr"]}, subs:["cd","cr","hpp"], er:1.1, tal:["skill","burst","na"], wpns:["Surf's Up","Prototype Amber","Sacrificial Fragments"], note:"Escala com HP, não com ATQ. Precisa de Nahida ou Dendro para as marcas." }),
   C({ id:"sigewinne", n:"Sigewinne", el:"hydro", wt:"bow", asc:["hpp",28.8], role:"Cura", tags:["healer"], sets:[{n:"Ocean-Hued Clam",p:4},{n:"Tenacity of the Millelith",p:4}], main:{sands:["hpp"],goblet:["hpp"],circlet:["heal","hpp"]}, subs:["hpp","er","cr","cd"], er:1.4, tal:["skill","burst","na"], wpns:["Silvershower Heartstrings","Sacrificial Bow","Favonius Warbow","Prototype Crescent"] }),
-  C({ id:"dahlia", n:"Dahlia", el:"hydro", wt:"sword", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"dahlia", n:"Dahlia", el:"hydro", wt:"sword", asc:["hpp",24], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
   C({ id:"sayu", n:"Sayu", el:"anemo", wt:"claymore", asc:["hpp",24], role:"Cura / agrupador", tags:["healer","buffer"], sets:[{n:"Viridescent Venerer",p:4},{n:"Noblesse Oblige",p:4}], main:{sands:["em","atkp"],goblet:["em","dmg"],circlet:["heal","em"]}, subs:["em","er","hpp"], er:1.6, tal:["skill","burst","na"], wpns:["Sacrificial Greatsword","Favonius Greatsword","Makhaira Aquamarine","Katsuragikiri Nagamasa"] }),
   C({ id:"heizou", n:"Shikanoin Heizou", el:"anemo", wt:"catalyst", asc:["dmg",24], role:"DPS / sub-DPS", tags:["dps"], sets:[{n:"Viridescent Venerer",p:4},{n:"Desert Pavilion Chronicle",p:4}], main:{sands:["atkp","em"],goblet:["dmg","em"],circlet:["cd","cr"]}, subs:["cd","cr","atkp","em"], er:1.2, tal:["skill","na","burst"], wpns:["Lost Prayer to the Sacred Winds","The Widsith","Solar Pearl","Mappa Mare"] }),
   C({ id:"lynette", n:"Lynette", el:"anemo", wt:"sword", asc:["dmg",24], role:"Suporte / agrupador", tags:["buffer"], sets:[{n:"Viridescent Venerer",p:4},{n:"Noblesse Oblige",p:4}], main:{sands:["atkp","er"],goblet:["dmg","atkp"],circlet:["cd","cr"]}, subs:["er","atkp","cd","cr"], er:1.6, tal:["burst","skill","na"], wpns:["Favonius Sword","Sacrificial Sword","Iron Sting","Xiphos' Moonlight"] }),
@@ -520,24 +520,24 @@ const CHARS = [
   C({ id:"emilie", n:"Emilie", el:"dendro", wt:"polearm", asc:["cd",88.4], role:"Sub-DPS fora de campo", tags:["subdps"], sets:[{n:"Golden Troupe",p:4},{n:"Deepwood Memories",p:4}], main:{sands:["atkp","em"],goblet:["dmg"],circlet:["cd","cr"]}, subs:["cd","cr","atkp","em"], er:1.3, tal:["skill","burst","na"], wpns:["Lumidouce Elegy","Staff of the Scarlet Sands","The Catch","Moonpiercer"], note:"Funciona melhor com Pyro no time para gerar Fumaça Perfumada." }),
   C({ id:"travelerdendro", n:"Viajante (Dendro)", el:"dendro", wt:"sword", asc:["atkp",24], role:"Sub-DPS / aplicação", tags:["subdps"], sets:[{n:"Deepwood Memories",p:4},{n:"Gilded Dreams",p:4}], main:{sands:["em"],goblet:["em"],circlet:["em"]}, subs:["em","er"], er:1.5, tal:["burst","skill","na"], wpns:["Freedom-Sworn","Iron Sting","Xiphos' Moonlight","Sapwood Blade"], note:"O Supremo é uma das melhores aplicações de Dendro do jogo. Proficiência e Recarga." }),
   C({ id:"travelerpyro", n:"Viajante (Pyro)", el:"pyro", wt:"sword", asc:["atkp",24], role:"Sub-DPS", tags:["subdps"], sets:[{n:"Crimson Witch of Flames",p:4},{n:"Noblesse Oblige",p:4}], main:{sands:["atkp","er"],goblet:["dmg"],circlet:["cd","cr"]}, subs:["cd","cr","atkp","er"], er:1.6, tal:["burst","skill","na"], wpns:["Festering Desire","Sacrificial Sword","Iron Sting","The Black Sword"] }),
-  C({ id:"aino", n:"Aino", el:"hydro", wt:"claymore", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
-  C({ id:"aloy", n:"Aloy", el:"cryo", wt:"bow", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
-  C({ id:"columbina", n:"Columbina", el:"hydro", wt:"catalyst", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
-  C({ id:"durin", n:"Durin", el:"pyro", wt:"sword", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
-  C({ id:"flins", n:"Flins", el:"electro", wt:"polearm", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
-  C({ id:"illuga", n:"Illuga", el:"geo", wt:"polearm", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
-  C({ id:"ineffa", n:"Ineffa", el:"electro", wt:"polearm", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
-  C({ id:"jahoda", n:"Jahoda", el:"anemo", wt:"bow", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
-  C({ id:"lauma", n:"Lauma", el:"dendro", wt:"catalyst", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
-  C({ id:"linnea", n:"Linnea", el:"geo", wt:"bow", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
-  C({ id:"lohen", n:"Lohen", el:"cryo", wt:"polearm", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
-  C({ id:"nefer", n:"Nefer", el:"dendro", wt:"catalyst", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
-  C({ id:"nicole", n:"Nicole", el:"pyro", wt:"catalyst", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
-  C({ id:"prune", n:"Prune", el:"anemo", wt:"catalyst", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
-  C({ id:"skirk", n:"Skirk", el:"cryo", wt:"sword", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
-  C({ id:"varka", n:"Varka", el:"anemo", wt:"claymore", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
-  C({ id:"manekin", n:"Manekin", el:"anemo", wt:"sword", asc:null, role:"Elemento adaptável", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true, note:"Elemento adaptável, como o Viajante — o elemento aqui é só um marcador. Crie uma entrada por forma que você usa." }),
-  C({ id:"zibai", n:"Zibai", el:"geo", wt:"sword", asc:null, role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"aino", n:"Aino", el:"hydro", wt:"claymore", asc:["em",96], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"aloy", n:"Aloy", el:"cryo", wt:"bow", asc:["dmg",28.8], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"columbina", n:"Columbina", el:"hydro", wt:"catalyst", asc:["cr",24.2], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"durin", n:"Durin", el:"pyro", wt:"sword", asc:["cd",88.4], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"flins", n:"Flins", el:"electro", wt:"polearm", asc:["cd",88.4], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"illuga", n:"Illuga", el:"geo", wt:"polearm", asc:["em",96], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"ineffa", n:"Ineffa", el:"electro", wt:"polearm", asc:["cr",24.2], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"jahoda", n:"Jahoda", el:"anemo", wt:"bow", asc:["heal",18.5], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"lauma", n:"Lauma", el:"dendro", wt:"catalyst", asc:["em",115.2], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"linnea", n:"Linnea", el:"geo", wt:"bow", asc:["cr",24.2], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"lohen", n:"Lohen", el:"cryo", wt:"polearm", asc:["cd",88.4], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"nefer", n:"Nefer", el:"dendro", wt:"catalyst", asc:["cd",88.4], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"nicole", n:"Nicole", el:"pyro", wt:"catalyst", asc:["atkp",28.8], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"prune", n:"Prune", el:"anemo", wt:"catalyst", asc:["atkp",24], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"skirk", n:"Skirk", el:"cryo", wt:"sword", asc:["cd",88.4], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"varka", n:"Varka", el:"anemo", wt:"claymore", asc:["cd",88.4], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
+  C({ id:"manekin", n:"Manekin", el:"anemo", wt:"sword", asc:["atkp",24], role:"Elemento adaptável", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true, note:"Elemento adaptável, como o Viajante — o elemento aqui é só um marcador. Crie uma entrada por forma que você usa." }),
+  C({ id:"zibai", n:"Zibai", el:"geo", wt:"sword", asc:["cd",88.4], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
   C({ id:"sandrone", n:"Sandrone", el:"cryo", wt:"claymore", asc:["cr",24.2], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
   C({ id:"odette", n:"Odette", el:"cryo", wt:"sword", asc:["cd",88.4], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),
   C({ id:"alyosha", n:"Alyosha", el:"electro", wt:"polearm", asc:["er",26.7], role:"Dados a confirmar", tags:[], sets:[], main:{sands:[],goblet:[],circlet:[]}, subs:[], er:1.4, tal:["skill","burst","na"], wpns:[], revisar:true }),

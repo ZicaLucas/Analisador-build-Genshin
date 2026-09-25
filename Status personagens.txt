@@ -1,0 +1,134 @@
+Alguns personagens tem status mínimos para mudar o main status de algum artefato então entre parênteses vai ter a condicional, além de que alguns personagens podem desempenhar papel de dps ou suporte:
+Aino
+  conjunto: Silken Moon's Serenade (4)
+  ampulheta/cálice/coroa:  Energy Recharge  ou  Elemental Mastery /  Elemental Mastery / Elemental Mastery ou CRIT Rate (Only recommended if using a Favonius weapon)
+  substats: Energy Recharge >Elemental Mastery >CRIT Rate (Only recommended if using a Favonius weapon )
+  recarga: 180 
+  talentos: burst > skill 
+Albedo
+  conjunto: Husk of Opulent Dreams (4) or Golden Troupe (4)
+  ampulheta/cálice/coroa: Def% / Def% or Geo% (DEF% is generally preferred for team damage unless Albedo already has, or is close to 3,000 DEF in combat.)  / Crit Rate or Crit Dmg
+  substats: CRIT Rate / CRIT DMG > DEF% > Energy Recharge
+  recarga: 100 (não é muito necessário focar em recarga)
+  talentos: skill > burst (Not used in quite a few teams.)
+Alhaitham
+  conjunto: Gilded Dreams (4)
+  ampulheta/cálice/coroa: Elemental Mastery or  ATK% / Dendro DMG / CRIT Rate or CRIT DMG
+  substats: Energy Recharge (Certain Quicken teams can run little to no Energy Recharge and simply Burst every other rotation without a dps loss) > CRIT Rate / CRIT DMG > Elemental Mastery 	(If you're running under 200 Elemental Mastery this substat has priority over Crit)  > ATK%
+  recarga: 130
+  talentos: skill > burst = na
+Aloy
+  conjunto: Blizzard Strayer (4)
+  ampulheta/cálice/coroa: ATK% or Elemental Mastery (Elemental Mastery is only an option if your Aloy is played on a Reverse Melt team as it provides nothing to a Freeze Aloy.) / Cryo% / 
+	CRIT Rate / CRIT DMG
+  substats: CRIT Rate or CRIT DMG > ATK% > Elemental Mastery ( Only an option if your Aloy is played on a Reverse Melt team as it provides nothing to a Freeze Aloy.) > Energy Recharge
+  recarga: 110
+  talentos: Burst > skill 
+Alyosha
+  conjunto: Heart of the Furnace (4)
+  ampulheta/cálice/coroa: ATK% or Energy Recharge / ATK% / ATK% or CRIT Rate (Only recommended if using a Favonius weapon)
+  substats: Energy Recharge (Prioritize until requirements are met.) > ATK% > CRIT Rate (Only recommended if using a Favonius weapon)
+  recarga: 180 (só se for ultar, mas não é necessário)
+  talentos: skill > burst (Burst talent levels are optional. Only raise them if you wish to get more out of Alyosha's personal damage.)
+Amber Dps
+  conjunto: Shimenawa's Reminiscence (4)
+  ampulheta/cálice/coroa: ATK% or Elemental Mastery / Pyro DMG / CRIT DMG
+  substats: CRIT DMG > ATK% > elemental Mastery
+  recarga: 100 (não usa a ult)
+  talentos: na > skill 
+Amber Buff Support
+  conjunto: Noblesse Oblige (4)
+  ampulheta/cálice/coroa: Energy Recharge or ATK%  / Pyro DMG / CRIT Rate or CRIT DMG
+  substats: Energy Recharge > CRIT Rate or CRIT DMG > ATK%
+  recarga: 200
+  talentos: burst > skill
+Anemo Traveler
+  conjunto: Viridescent Venerer (4)
+  ampulheta/cálice/coroa: Energy Recharge or ATK% (Typically only used with Favonius Sword and sometimes high Energy Recharge weapons.)  / Anemo DMG / CRIT Rate / CRIT DMG
+  substats: Energy Recharge > ATK% > CRIT Rate or CRIT DMG
+  recarga: 160
+  talentos: skill > burst > na
+Arataki Itto
+  conjunto: Husk of Opulent Dreams (4)
+  ampulheta/cálice/coroa: DEF% / Geo DMG / CRIT Rate or CRIT DMG
+  substats: Energy Recharge (Prioritize until requirements are met.) > CRIT Rate or CRIT DMG > DEF%
+  recarga: 130
+  talentos:  na > burst > skill 
+Arlecchino
+  conjunto: Fragment of Harmonic Whimsy (4)
+  ampulheta/cálice/coroa: ATK% or Elemental Mastery (Should only be considered if Arlecchino is in a Vaporize or Melt team.) / Pyro DMG / CRIT Rate or CRIT DMG
+  substats: CRIT Rate or CRIT DMG > Elemental Mastery (Should only be considered if Arlecchino is in a Vaporize or Melt team.) / ATK%
+  recarga: 100 (Burst it's not viable in the most teams) 
+  talentos: na > skill > burst 
+Baizhu
+  conjunto: Deepwood Memories (4)
+  ampulheta/cálice/coroa: HP% or Energy Recharge / HP% / HP% or Healing Bonus (paired with furina normally)
+  substats: Energy Recharge (Prioritize until requirements are met.) > HP% > HP Flat 
+  recarga: 200
+  talentos:  burst > skill
+Barbara Heal Support 
+  conjunto: Ocean-Hued Clam (4)
+  ampulheta/cálice/coroa: HP% / HP% / Healing Bonus
+  substats: HP% > HP Flat 
+  recarga: 230 (Burst it's not necessary)
+  talentos: skill > burst
+Barbara Bloom Dps 
+  conjunto: Flower of Paradise Lost (4)
+  ampulheta/cálice/coroa: Elemental Mastery / Elemental Mastery / Elemental Mastery
+  substats: Elemental Mastery / Energy Recharge
+  recarga: 200 (Burst it's not necessary)
+  talentos: skill > burst
+Beidou 
+  conjunto: Emblem of Severed Fate (4)
+  ampulheta/cálice/coroa: ATK% / Energy Recharge (Prioritize until requirements are met.) / Electro DMG / CRIT Rate or CRIT DMG
+  substats: Energy Recharge (Prioritize until requirements are met.) / CRIT Rate or CRIT DMG / ATK%
+  recarga: 180
+  talentos: burst > skill
+Bennett 
+  conjunto: Noblesse Oblige (4)
+  ampulheta/cálice/coroa: Energy Recharge or ATK% or HP% / Pyro DMG or HP% / CRIT Rate or CRIT DMG or HP% or Healing Bonus
+  substats: Energy Recharge (Prioritize until requirements are met.) / CRIT Rate or CRIT DMG / HP% 
+  recarga: 220
+  talentos: burst > skill (Only for personal Bennett damage)
+Candace
+  conjunto: Scroll of the Hero of Cinder City (4)
+  ampulheta/cálice/coroa: Energy Recharge or HP% / HP% or Hydro DMG / CRIT Rate or CRIT DMG or HP% 
+  substats: Energy Recharge / CRIT Rate (Only recommended if using a Favonius weapon.) / HP% 
+  recarga: 200
+  talentos: burst 
+Charlotte
+  conjunto: Noblesse Oblige (4) or Tenacity of the Millelith (4)
+  ampulheta/cálice/coroa:  Energy Recharge or ATK% / ATK% / Healing Bonus or ATK% or CRIT Rate (Only recommended if using a Favonius weapon.)
+  substats:  Energy Recharge (Prioritize until requirements are met.) / ATK%
+  recarga: 220
+  talentos: burst > skill
+Chasca
+  conjunto: Obsidian Codex (4)
+  ampulheta/cálice/coroa: ATK% / ATK% / CRIT Rate or CRIT DMG 
+  substats:  CRIT Rate or CRIT DMG / ATK% 
+  recarga: 100 (Building Energy Recharge to Burst every rotation is only feasible in energy rich teams or at [C4+].)
+  talentos: skill > burst
+Chevreuse
+  conjunto: Noblesse Oblige (4) or Scroll of the Hero of Cinder City (4) or Ocean-Hued Clam (4) or Song of Days Past (4)
+  ampulheta/cálice/coroa: HP% or Energy Recharge / HP% / HP% or Healing Bonus (Only use this if Chevreuse has already reached 40,000 HP.)
+  substats: Energy Recharge (Only if needed. Prioritize until meeting Energy Recharge requirements.) > HP% 
+  recarga: 160 (Only with Noblesse Oblige)
+  talentos: skill > burst 
+Chiori
+  conjunto: Golden Troupe (4) [Whitout burst every rotation] or Husk of Opulent Dreams (4) [Burst every rotation]
+  ampulheta/cálice/coroa:  DEF% / Geo DMG / CRIT Rate or CRIT DMG
+  substats: CRIT Rate or CRIT DMG  / DEF% / Energy Recharge (Only with Husk of Opulent Dreams)
+  recarga: 150
+  talentos: skill > burst 
+Chongyun Burst Nuke
+  conjunto: Noblesse Oblige (4) (If no one is using) or Emblem of Severed Fate (4) or Noblesse Oblige (2) / Blizzard Strayer (2)
+  ampulheta/cálice/coroa:  ATK% or Energy Recharge or Elemental Mastery / Cryo DMG / CRIT Rate or CRIT DMG 
+  substats: CRIT Rate or CRIT DMG / ATK% / Elemental Mastery 
+  recarga: 140
+  talentos: burst > skill  
+Chongyun Infusion Support
+  conjunto: Noblesse Oblige (4) 
+  ampulheta/cálice/coroa:  ATK% or Energy Recharge / Cryo DMG / CRIT Rate or CRIT DMG 
+  substats: CRIT Rate or CRIT DMG / ATK%  
+  recarga: 140
+  talentos: burst > skill 
