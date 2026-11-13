@@ -573,6 +573,11 @@ const aparenciasDe = (id) => APARENCIAS[baseDe(id)] || null;
 const arteDe = (tipo, id, apar) =>
   ASSETS[tipo](apar ? baseDe(id) + "-" + apar : baseDe(id));
 
+/* Reserva: se a arte da aparência não existir, cai na arte padrão do
+   personagem. Serve principalmente para o Viajante, que sempre pede
+   uma aparência mas pode não ter Aether/Lumine baixados ainda. */
+const arteReserva = (tipo, id) => ASSETS[tipo](baseDe(id));
+
 const baseDe = (id) => (CHAR_BY_ID[id] && CHAR_BY_ID[id].base) || id;
 
 // Constelações: qual talento cada uma eleva em +3, e os nomes.
@@ -1889,13 +1894,12 @@ export default function App() {
 
         .sheet{background:var(--vellum);color:var(--ink);border-radius:3px;padding:20px;
                box-shadow:0 12px 34px rgba(0,0,0,.34);position:relative;overflow:hidden}
-        .sheet-art{position:absolute;top:0;right:0;height:100%;width:66%;object-fit:cover;
-                   object-position:top center;z-index:0;pointer-events:none;
-                   filter:saturate(.82)}
+        .sheet-art{position:absolute;top:0;right:0;height:100%;width:74%;object-fit:cover;
+                   object-position:top center;z-index:0;pointer-events:none}
         .sheet-veil{position:absolute;inset:0;z-index:0;pointer-events:none;
           background:
-            linear-gradient(96deg,var(--vellum) 30%,rgba(237,228,207,.94) 52%,rgba(237,228,207,.80) 100%),
-            linear-gradient(to top,var(--vellum) 2%,transparent 26%)}
+            linear-gradient(96deg,var(--vellum) 38%,rgba(237,228,207,.86) 58%,rgba(237,228,207,.30) 100%),
+            linear-gradient(to top,var(--vellum) 1%,transparent 18%)}
         .sheet>*:not(.sheet-art):not(.sheet-veil){position:relative;z-index:1}
         .sheet h2,.panel h2{font-family:'Fraunces',serif;font-size:13px;font-weight:600;letter-spacing:.14em;
                text-transform:uppercase;margin:0 0 16px;padding-bottom:9px;border-bottom:1px solid rgba(27,28,34,.16)}
@@ -2065,7 +2069,7 @@ export default function App() {
               <button key={i} className="slot" data-on={i === active ? "1" : "0"}
                 style={{ "--el": c ? EL[c.el].c : "var(--brass)" }}
                 onClick={() => setActive(i)} aria-pressed={i === active}>
-                {c && <Img className="slot-art" src={arteDe("avatar", c.id, team[i].aparencia)} alt="" />}
+                {c && <Img className="slot-art" src={arteDe("avatar", c.id, team[i].aparencia)} fallback={arteReserva("avatar", c.id)} alt="" />}
                 <span className="slot-n">Membro {i + 1}</span>
                 <span className="slot-c" style={{ color: c ? EL[c.el].c : "var(--muted)" }}>
                   {c ? c.n : "vazio"}
@@ -2082,7 +2086,7 @@ export default function App() {
           <div className="sheet">
             {char && (
               <>
-                <Img className="sheet-art" src={arteDe("splash", char.id, b.aparencia)} alt="" />
+                <Img className="sheet-art" src={arteDe("splash", char.id, b.aparencia)} fallback={arteReserva("splash", char.id)} alt="" />
                 <div className="sheet-veil" aria-hidden="true" />
               </>
             )}
