@@ -359,7 +359,7 @@ const CHARS = [
   C({ id:"alyosha", base:"alyosha", n:"Alyosha", el:"electro", wt:"polearm", asc:["er",26.7], role:"Build principal", tags:["subdps"], sets:[{n:"Heart of the Furnace",p:4}], main:{sands:["atkp","er"],goblet:["atkp"],circlet:["atkp","cr"]}, subs:["er","atkp","cr"], er:1.8, tal:["skill","burst","na"], wpns:[], cond:["Only recommended if using a Favonius weapon","Prioritize until requirements are met.","Only recommended if using a Favonius weapon"] }),
   C({ id:"amber-dps", base:"amber", n:"Amber — Dps", el:"pyro", wt:"bow", asc:["atkp",24], role:"Dps", tags:["dps"], sets:[{n:"Shimenawa's Reminiscence",p:4}], main:{sands:["atkp","em"],goblet:["dmg"],circlet:["cd"]}, subs:["cd","atkp","em"], er:1, tal:["na","skill","burst"], wpns:["Prototype Crescent","Alley Hunter","Sacrificial Bow","Fading Twilight"], cond:["não usa a ult"] }),
   C({ id:"amber-buff-support", base:"amber", n:"Amber — Buff Support", el:"pyro", wt:"bow", asc:["atkp",24], role:"Buff Support", tags:["buffer"], sets:[{n:"Noblesse Oblige",p:4}], main:{sands:["er","atkp"],goblet:["dmg"],circlet:["cr","cd"]}, subs:["er","cr","cd","atkp"], er:2, tal:["burst","skill","na"], wpns:["Prototype Crescent","Alley Hunter","Sacrificial Bow","Fading Twilight"] }),
-  C({ id:"traveleranemo", base:"traveleranemo", n:"Anemo Traveler", el:"anemo", wt:"sword", asc:null, role:"Build principal", tags:["subdps"], sets:[{n:"Viridescent Venerer",p:4}], main:{sands:["er","atkp"],goblet:["dmg"],circlet:["cr","cd"]}, subs:["er","atkp","cr","cd"], er:1.6, tal:["skill","burst","na"], wpns:[], cond:["Typically only used with Favonius Sword and sometimes high Energy Recharge weapons."] }),
+  C({ id:"traveleranemo", base:"traveleranemo", n:"Viajante (Anemo)", el:"anemo", wt:"sword", asc:null, role:"Build principal", tags:["subdps"], sets:[{n:"Viridescent Venerer",p:4}], main:{sands:["er","atkp"],goblet:["dmg"],circlet:["cr","cd"]}, subs:["er","atkp","cr","cd"], er:1.6, tal:["skill","burst","na"], wpns:[], cond:["Typically only used with Favonius Sword and sometimes high Energy Recharge weapons."] }),
   C({ id:"itto", base:"itto", n:"Arataki Itto", el:"geo", wt:"claymore", asc:["cr",24.2], role:"Build principal", tags:["subdps"], sets:[{n:"Husk of Opulent Dreams",p:4}], main:{sands:["defp"],goblet:["dmg"],circlet:["cr","cd"]}, subs:["er","cr","cd","defp"], er:1.3, tal:["na","burst","skill"], wpns:["Redhorn Stonethresher","Serpent Spine","Verdict"], cond:["Prioritize until requirements are met."], note:"Escala com DEF. ATQ% e HP% são status mortos." }),
   C({ id:"arlecchino", base:"arlecchino", n:"Arlecchino", el:"pyro", wt:"polearm", asc:["cd",88.4], role:"Build principal", tags:["subdps"], sets:[{n:"Fragment of Harmonic Whimsy",p:4}], main:{sands:["atkp","em"],goblet:["dmg"],circlet:["cr","cd"]}, subs:["cr","cd","em","atkp"], er:1, tal:["na","skill","burst"], wpns:["Crimson Moon's Semblance","Staff of Homa","Deathmatch"], cond:["Should only be considered if Arlecchino is in a Vaporize or Melt team.","Should only be considered if Arlecchino is in a Vaporize or Melt team.","Burst it's not viable in the most teams"], note:"Quase não usa o Supremo. Recarga baixa é aceitável." }),
   C({ id:"baizhu", base:"baizhu", n:"Baizhu", el:"dendro", wt:"catalyst", asc:["hpp",28.8], role:"Build principal", tags:["subdps"], sets:[{n:"Deepwood Memories",p:4}], main:{sands:["hpp","er"],goblet:["hpp"],circlet:["hpp","heal"]}, subs:["er","hpp"], er:2, tal:["burst","skill","na"], wpns:["Jadefall's Splendor","Prototype Amber","Favonius Codex"], cond:["paired with furina normally","Prioritize until requirements are met."] }),
@@ -378,8 +378,8 @@ const CHARS = [
   C({ id:"clorinde", base:"clorinde", n:"Clorinde", el:"electro", wt:"sword", asc:["cr",24.2], role:"Build principal", tags:["subdps"], sets:[{n:"Fragment of Harmonic Whimsy",p:4}], main:{sands:["atkp"],goblet:["dmg"],circlet:["cr","cd"]}, subs:["cr","cd","atkp"], er:1.1, tal:["skill","burst","na"], wpns:["Absolution","Mistsplitter Reforged","The Black Sword"], note:"Os golpes no estado da Habilidade escalam com o talento de Habilidade Elemental." }),
   C({ id:"collei", base:"collei", n:"Collei", el:"dendro", wt:"bow", asc:["atkp",24], role:"Build principal", tags:["subdps"], sets:[{n:"Deepwood Memories",p:4}], main:{sands:["er","atkp","em"],goblet:["dmg","em"],circlet:["cr","cd","em"]}, subs:["er","cr","cd","atkp","em"], er:2, tal:["burst","skill","na"], wpns:["Sacrificial Bow","Favonius Warbow","The Stringless","Fading Twilight"], cond:["Prioritize until requirements are met."] }),
   C({ id:"columbina", base:"columbina", n:"Columbina", el:"hydro", wt:"catalyst", asc:["cr",24.2], role:"Build principal", tags:["subdps"], sets:[{n:"Silken Moon's Serenade",p:4},{n:"Aubade of Morningstar and Moon",p:4}], main:{sands:["hpp","er"],goblet:["hpp"],circlet:["cr","cd"]}, subs:["er","cr","cd","hpp"], er:1.8, tal:["skill","burst","na"], wpns:[], cond:["Prioritize until requirements are met."] }),
-  C({ id:"travelercryo-stellar-glimmer-dps", base:"travelercryo", n:"Cryo Traveler — Stellar Glimmer DPS", el:"cryo", wt:"sword", asc:null, role:"Stellar Glimmer DPS", tags:["dps"], sets:[{n:"Disenchantment in Deep Shadow",p:4}], main:{sands:["atkp"],goblet:["atkp"],circlet:["cr","cd"]}, subs:["er","cr","cd","atkp"], er:1.3, tal:["burst","na","skill"], wpns:[], cond:["Prioritize until requirements are met."] }),
-  C({ id:"travelercryo-stellar-glimmer-support", base:"travelercryo", n:"Cryo Traveler — Stellar Glimmer Support", el:"cryo", wt:"sword", asc:null, role:"Stellar Glimmer Support", tags:["buffer"], sets:[{n:"Heart of the Furnace",p:4}], main:{sands:["atkp"],goblet:["atkp"],circlet:["cr","cd"]}, subs:["er","cr","cd","atkp"], er:1.8, tal:["burst","na","skill"], wpns:[], cond:["Prioritize until requirements are met."] }),
+  C({ id:"travelercryo-stellar-glimmer-dps", base:"travelercryo", n:"Viajante (Cryo) — Stellar Glimmer DPS", el:"cryo", wt:"sword", asc:null, role:"Stellar Glimmer DPS", tags:["dps"], sets:[{n:"Disenchantment in Deep Shadow",p:4}], main:{sands:["atkp"],goblet:["atkp"],circlet:["cr","cd"]}, subs:["er","cr","cd","atkp"], er:1.3, tal:["burst","na","skill"], wpns:[], cond:["Prioritize until requirements are met."] }),
+  C({ id:"travelercryo-stellar-glimmer-support", base:"travelercryo", n:"Viajante (Cryo) — Stellar Glimmer Support", el:"cryo", wt:"sword", asc:null, role:"Stellar Glimmer Support", tags:["buffer"], sets:[{n:"Heart of the Furnace",p:4}], main:{sands:["atkp"],goblet:["atkp"],circlet:["cr","cd"]}, subs:["er","cr","cd","atkp"], er:1.8, tal:["burst","na","skill"], wpns:[], cond:["Prioritize until requirements are met."] }),
   C({ id:"cyno-stellar-conduct-dps", base:"cyno", n:"Cyno — Stellar Conduct DPS", el:"electro", wt:"polearm", asc:["cd",88.4], role:"Stellar Conduct DPS", tags:["dps"], sets:[{n:"Disenchantment in Deep Shadow",p:4}], main:{sands:["atkp"],goblet:["atkp"],circlet:["cr","cd"]}, subs:["er","cr","cd","atkp"], er:1.4, tal:["burst","skill","na"], wpns:["Staff of the Scarlet Sands","Primordial Jade Winged-Spear","\"The Catch\""], cond:["Prioritize until requirements are met."] }),
   C({ id:"cyno-electro-dps", base:"cyno", n:"Cyno — Electro DPS", el:"electro", wt:"polearm", asc:["cd",88.4], role:"Electro DPS", tags:["dps"], sets:[{n:"Thundering Fury",p:4}], main:{sands:["em","atkp"],goblet:["dmg"],circlet:["cr","cd"]}, subs:["er","cr","cd","atkp","em"], er:1.2, tal:["burst","skill","na"], wpns:["Staff of the Scarlet Sands","Primordial Jade Winged-Spear","\"The Catch\""], cond:["Prioritize until requirements are met."] }),
   C({ id:"dahlia", base:"dahlia", n:"Dahlia", el:"hydro", wt:"sword", asc:["hpp",24], role:"Build principal", tags:["subdps"], sets:[{n:"Noblesse Oblige",p:4}], main:{sands:["er","hpp"],goblet:["hpp"],circlet:["hpp"]}, subs:["er","hpp"], er:2, tal:["burst","skill","na"], wpns:[] }),
@@ -392,7 +392,7 @@ const CHARS = [
   C({ id:"dori", base:"dori", n:"Dori", el:"electro", wt:"claymore", asc:["hpp",24], role:"Build principal", tags:["subdps"], sets:[{n:"Noblesse Oblige",p:4}], main:{sands:["er","hpp","em"],goblet:["hpp","em"],circlet:["heal","hpp","em","cr"]}, subs:["cr","er"], er:2, tal:["burst","skill","na"], wpns:["Sacrificial Greatsword","Favonius Greatsword","Prototype Archaic"], cond:["Can be considered on the circlet if running Favonius Greatsword.","Only recommended if using a Favonius weapon."] }),
   C({ id:"durin-buff-support", base:"durin", n:"Durin — buff support", el:"pyro", wt:"sword", asc:["cd",88.4], role:"buff support", tags:["buffer"], sets:[{n:"A Day Carved From Rising Winds",p:4}], main:{sands:["atkp"],goblet:["dmg","atkp"],circlet:["cr","cd"]}, subs:["cr","cd","atkp","er"], er:1.6, tal:["burst","skill","na"], wpns:[] }),
   C({ id:"durin-off-field-dps", base:"durin", n:"Durin — off field dps", el:"pyro", wt:"sword", asc:["cd",88.4], role:"off field dps", tags:["dps","subdps"], sets:[{n:"A Day Carved From Rising Winds",p:4}], main:{sands:["atkp"],goblet:["dmg","atkp"],circlet:["cr","cd"]}, subs:["cr","cd","atkp","em","er"], er:1.6, tal:["burst","skill","na"], wpns:[] }),
-  C({ id:"travelerelectro", base:"travelerelectro", n:"Electro Traveler", el:"electro", wt:"sword", asc:null, role:"Build principal", tags:["subdps"], sets:[{n:"Noblesse Oblige",p:4}], main:{sands:["er"],goblet:["dmg"],circlet:["cr","cd"]}, subs:["er","atkp","cr","cd"], er:2.3, tal:["skill","burst","na"], wpns:[] }),
+  C({ id:"travelerelectro", base:"travelerelectro", n:"Viajante (Electro)", el:"electro", wt:"sword", asc:null, role:"Build principal", tags:["subdps"], sets:[{n:"Noblesse Oblige",p:4}], main:{sands:["er"],goblet:["dmg"],circlet:["cr","cd"]}, subs:["er","atkp","cr","cd"], er:2.3, tal:["skill","burst","na"], wpns:[] }),
   C({ id:"emilie", base:"emilie", n:"Emilie", el:"dendro", wt:"polearm", asc:["cd",88.4], role:"Build principal", tags:["subdps"], sets:[{n:"Unfinished Reverie",p:4}], main:{sands:["atkp"],goblet:["dmg"],circlet:["cr","cd"]}, subs:["cr","cd","atkp"], er:1.4, tal:["skill","burst","na"], wpns:["Lumidouce Elegy","Staff of the Scarlet Sands","\"The Catch\"","Moonpiercer"], note:"Funciona melhor com Pyro no time para gerar Fumaça Perfumada." }),
   C({ id:"escoffier", base:"escoffier", n:"Escoffier", el:"cryo", wt:"polearm", asc:["cr",24.2], role:"Build principal", tags:["subdps"], sets:[{n:"Golden Troupe",p:4}], main:{sands:["atkp","er"],goblet:["dmg","atkp"],circlet:["cr","cd"]}, subs:["er","cr","cd","atkp"], er:1.8, tal:["skill","burst","na"], wpns:["Symphonist of Scents","Favonius Lance","\"The Catch\""], cond:["While Cryo DMG Bonus is usually better for Damage, high amounts of DMG% buffs can make ATK% Goblets competitive while also providing a bit more healing.","Prioritize until you can use your burst every rotation."] }),
   C({ id:"eula", base:"eula", n:"Eula", el:"cryo", wt:"claymore", asc:["cd",88.4], role:"Build principal", tags:["subdps"], sets:[{n:"Pale Flame",p:4}], main:{sands:["atkp"],goblet:["phys"],circlet:["cr","cd"]}, subs:["cr","cd","er","atkp"], er:1.5, tal:["na","burst","skill"], wpns:["Song of Broken Pines","Wolf's Gravestone","Serpent Spine","Redhorn Stonethresher"], note:"Dano físico: cálice de Dano Físico%. O Lightfall Sword vem do Supremo." }),
@@ -407,10 +407,10 @@ const CHARS = [
   C({ id:"ganyu-freeze-dps", base:"ganyu", n:"Ganyu — Freeze DPS", el:"cryo", wt:"bow", asc:["cd",88.4], role:"Freeze DPS", tags:["dps"], sets:[{n:"Blizzard Strayer",p:4}], main:{sands:["atkp"],goblet:["dmg"],circlet:["cd"]}, subs:["cr","cd","atkp","er"], er:1.5, tal:["burst","na","skill"], wpns:["Amos' Bow","Polar Star","The Stringless","Prototype Crescent"] }),
   C({ id:"ganyu-melt-dps", base:"ganyu", n:"Ganyu — Melt DPS", el:"cryo", wt:"bow", asc:["cd",88.4], role:"Melt DPS", tags:["dps"], sets:[{n:"Wanderer's Troupe",p:4}], main:{sands:["atkp","em"],goblet:["dmg"],circlet:["cr","cd"]}, subs:["cr","cd","atkp","em"], er:1, tal:["na","skill","burst"], wpns:["Amos' Bow","Polar Star","The Stringless","Prototype Crescent"] }),
   C({ id:"ganyu-freeze-dps-2", base:"ganyu", n:"Ganyu — Freeze DPS", el:"cryo", wt:"bow", asc:["cd",88.4], role:"Freeze DPS", tags:["dps"], sets:[{n:"Blizzard Strayer",p:4}], main:{sands:["atkp"],goblet:["dmg"],circlet:["cr","cd"]}, subs:["cr","cd","atkp","er"], er:1.3, tal:["burst","na","skill"], wpns:["Amos' Bow","Polar Star","The Stringless","Prototype Crescent"] }),
-  C({ id:"travelergeo", base:"travelergeo", n:"Geo Traveler", el:"geo", wt:"sword", asc:null, role:"Build principal", tags:["subdps"], sets:[{n:"Nighttime Whispers in the Echoing Woods",p:4}], main:{sands:["er","atkp"],goblet:["dmg"],circlet:["cr","cd"]}, subs:["cr","cd","atkp","er"], er:1.6, tal:["skill","burst","na"], wpns:[] }),
+  C({ id:"travelergeo", base:"travelergeo", n:"Viajante (Geo)", el:"geo", wt:"sword", asc:null, role:"Build principal", tags:["subdps"], sets:[{n:"Nighttime Whispers in the Echoing Woods",p:4}], main:{sands:["er","atkp"],goblet:["dmg"],circlet:["cr","cd"]}, subs:["cr","cd","atkp","er"], er:1.6, tal:["skill","burst","na"], wpns:[] }),
   C({ id:"gorou", base:"gorou", n:"Gorou", el:"geo", wt:"bow", asc:["dmg",24], role:"Build principal", tags:["subdps"], sets:[{n:"The Exile",p:4}], main:{sands:["er"],goblet:["dmg","defp"],circlet:["cr","defp","heal"]}, subs:["er","defp","cr"], er:2, tal:["skill","burst","na"], wpns:["Favonius Warbow","Sacrificial Bow","Elegy for the End","Fading Twilight"], note:"Escala com DEF e só vale a pena em time com 2+ Geo." }),
   C({ id:"hutao", base:"hutao", n:"Hu Tao", el:"pyro", wt:"polearm", asc:["cd",88.4], role:"Build principal", tags:["subdps"], sets:[{n:"Shimenawa's Reminiscence",p:4},{n:"Crimson Witch of Flames",p:4}], main:{sands:["hpp","em"],goblet:["dmg"],circlet:["cr","cd"]}, subs:["cr","cd","em","hpp","atkp"], er:1.1, tal:["na","skill","burst"], wpns:["Staff of Homa","Crimson Moon's Semblance","Deathmatch","Dragon's Bane"], cond:["Since Hu Tao is able to trigger Vaporize on most of her damage output, Elemental Mastery is quite valuable on her. If you have less than 100EM total (including from Sucrose's Elemental Mastery share, Instructor (4"], note:"Escala com HP, mas ATQ% ainda contribui pouco — priorize HP% e crítico." }),
-  C({ id:"travelerhydro", base:"travelerhydro", n:"Hydro Traveler", el:"hydro", wt:"sword", asc:null, role:"Build principal", tags:["subdps"], sets:[{n:"Instructor",p:4},{n:"Noblesse Oblige",p:4},{n:"Scroll of the Hero of Cinder City",p:4}], main:{sands:["er","atkp"],goblet:["dmg"],circlet:["cr","cd","heal"]}, subs:["er","cr","cd","atkp"], er:2, tal:["skill","burst","na"], wpns:[] }),
+  C({ id:"travelerhydro", base:"travelerhydro", n:"Viajante (Hydro)", el:"hydro", wt:"sword", asc:null, role:"Build principal", tags:["subdps"], sets:[{n:"Instructor",p:4},{n:"Noblesse Oblige",p:4},{n:"Scroll of the Hero of Cinder City",p:4}], main:{sands:["er","atkp"],goblet:["dmg"],circlet:["cr","cd","heal"]}, subs:["er","cr","cd","atkp"], er:2, tal:["skill","burst","na"], wpns:[] }),
   C({ id:"iansan", base:"iansan", n:"Iansan", el:"electro", wt:"polearm", asc:["atkp",24], role:"Build principal", tags:["subdps"], sets:[{n:"Scroll of the Hero of Cinder City",p:4},{n:"Noblesse Oblige",p:4}], main:{sands:["atkp","er"],goblet:["atkp"],circlet:["atkp","cr"]}, subs:["er","atkp"], er:2, tal:["burst","skill","na"], wpns:["Favonius Lance","\"The Catch\"","Prospector's Drill","Ballad of the Fjords"], cond:["Only recommended if using a Favonius weapon.","Prioritize until you can use your burst every rotation."], note:"O buff escala com o ATQ BASE dela; use ATQ% só pelo dano próprio." }),
   C({ id:"ifa-anemo-dps", base:"ifa", n:"Ifa — Anemo DPS", el:"anemo", wt:"catalyst", asc:["em",96], role:"Anemo DPS", tags:["dps"], sets:[{n:"Obsidian Codex",p:4}], main:{sands:["atkp"],goblet:["dmg"],circlet:["cr","cd"]}, subs:["cr","cd","atkp","em"], er:1.3, tal:["skill","burst","na"], wpns:["Sacrificial Fragments","Favonius Codex","Wandering Evenstar"] }),
   C({ id:"ifa-reaction-dps", base:"ifa", n:"Ifa — Reaction DPS", el:"anemo", wt:"catalyst", asc:["em",96], role:"Reaction DPS", tags:["dps"], sets:[{n:"Viridescent Venerer",p:4}], main:{sands:["em","er"],goblet:["em"],circlet:["em"]}, subs:["er","em"], er:1.6, tal:["skill","burst","na"], wpns:["Sacrificial Fragments","Favonius Codex","Wandering Evenstar"], cond:["Prioritize until you can use your burst every rotation."] }),
@@ -1863,8 +1863,9 @@ export default function App() {
         .saved{font-size:12px;color:var(--jade);align-self:center;font-family:'IBM Plex Mono',monospace}
 
         /* ---- LOGO ---- */
-        .logo{display:inline-flex;align-items:center;height:96px;margin-bottom:14px}
-        .logo img{height:96px;width:auto;object-fit:contain;display:block}
+                .logobar{display:flex;justify-content:center;margin:0 0 22px}
+        .logo{display:inline-flex;align-items:center;height:192px;max-width:100%}
+        .logo img{height:192px;max-width:100%;width:auto;object-fit:contain;display:block}
         .logo:not(:has(img))::before{
           content:attr(data-ph);display:flex;align-items:center;padding:0 16px;height:100%;
           font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--brass-dim);
@@ -1915,15 +1916,15 @@ export default function App() {
 
         .sheet{background:var(--vellum);color:var(--ink);border-radius:3px;padding:20px;
                box-shadow:0 12px 34px rgba(0,0,0,.34);position:relative;overflow:hidden}
-        .sheet-art{position:absolute;top:0;right:0;height:100%;width:82%;object-fit:cover;
+        .sheet-art{position:absolute;top:0;right:0;height:100%;width:100%;object-fit:cover;
                    object-position:top center;z-index:0;pointer-events:none}
         .sheet-veil{position:absolute;inset:0;z-index:0;pointer-events:none;
           background:
-            linear-gradient(94deg,var(--vellum) 32%,rgba(237,228,207,.72) 48%,rgba(237,228,207,.10) 78%,rgba(237,228,207,0) 100%),
-            linear-gradient(to top,var(--vellum) 1%,transparent 14%)}
+            linear-gradient(94deg,rgba(237,228,207,.62) 0%,rgba(237,228,207,.34) 38%,rgba(237,228,207,.06) 70%,rgba(237,228,207,0) 100%)}
         .sheet>*:not(.sheet-art):not(.sheet-veil){position:relative;z-index:1}
         .sheet h2,.panel h2{font-family:'Fraunces',serif;font-size:13px;font-weight:600;letter-spacing:.14em;
-               text-transform:uppercase;margin:0 0 16px;padding-bottom:9px;border-bottom:1px solid rgba(27,28,34,.16)}
+               text-transform:uppercase;margin:0 0 16px;padding-bottom:9px;border-bottom:1px solid rgba(27,28,34,.16);
+               text-shadow:0 1px 2px var(--vellum),0 0 6px var(--vellum)}
         .panel h2{border-bottom-color:var(--slate2);color:var(--vellum)}
 
         .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -1932,7 +1933,8 @@ export default function App() {
         .ef{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink-soft);
             text-transform:none;letter-spacing:0;margin-top:2px}
         .lab{display:flex;flex-direction:column;gap:4px;font-size:11px;font-weight:600;
-             letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft)}
+             letter-spacing:.07em;text-transform:uppercase;color:var(--ink);
+             text-shadow:0 1px 2px var(--vellum),0 0 6px var(--vellum)}
         .lab-sm{max-width:88px}
         .fld{font-family:'IBM Plex Sans',sans-serif;font-size:13px;padding:7px 8px;border-radius:2px;
              border:1px solid rgba(27,28,34,.22);background:#FBF7EC;color:var(--ink);width:100%;
@@ -1943,7 +1945,8 @@ export default function App() {
 
         .piece{border-top:1px solid rgba(27,28,34,.14);padding-top:13px;margin-top:14px}
         .piece-head{display:flex;align-items:center;gap:11px;margin-bottom:9px}
-        .piece-head h4{font-family:'Fraunces',serif;font-size:15px;font-weight:600;margin:0;margin-right:auto}
+        .piece-head h4{font-family:'Fraunces',serif;font-size:15px;font-weight:600;margin:0;margin-right:auto;
+                       text-shadow:0 1px 2px var(--vellum),0 0 6px var(--vellum)}
         .rv{display:flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink-soft)}
         .rv-bar{width:64px;height:5px;background:rgba(27,28,34,.14);border-radius:3px;overflow:hidden}
         .rv-bar i{display:block;height:100%;background:var(--el);transition:width .3s}
@@ -1989,7 +1992,7 @@ export default function App() {
                border:1px dashed var(--slate2);border-radius:3px}
         .teamsec{margin-top:20px}
         .rec{font-size:12px;color:var(--ink-soft);margin:10px 0 0;padding:10px 12px;
-             background:rgba(201,162,39,.13);border-left:2px solid var(--brass);border-radius:2px}
+             background:rgba(240,232,212,.93);border-left:2px solid var(--brass);border-radius:2px}
         .rec-warn{background:rgba(194,65,45,.11);border-left-color:var(--red)}
         .rec code{font-family:'IBM Plex Mono',monospace;font-size:11px;
              background:rgba(27,28,34,.09);padding:1px 4px;border-radius:2px}
@@ -2023,7 +2026,7 @@ export default function App() {
           .dpstab .barcell{display:none}
           .dpsctl{flex-wrap:wrap}
         }
-        .setbox{margin-top:12px;padding:11px 13px;background:rgba(27,28,34,.055);
+        .setbox{margin-top:12px;padding:11px 13px;background:rgba(240,232,212,.93);
                 border-left:2px solid var(--el);border-radius:2px}
         .setlbl{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.11em;
                 text-transform:uppercase;color:var(--ink-soft);margin:0 0 6px}
@@ -2036,7 +2039,7 @@ export default function App() {
         .settxt{font-size:12px;color:var(--ink-soft);margin:3px 0;line-height:1.45}
         .settxt b{font-weight:600}
         .settxt em{color:var(--jade);font-style:normal;font-size:11px}
-        .ajbox{margin-top:12px;padding:12px 13px;background:rgba(201,162,39,.09);
+        .ajbox{margin-top:12px;padding:12px 13px;background:rgba(240,232,212,.93);
                border:1px dashed var(--brass-dim);border-radius:2px}
         .ajlbl{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.11em;
                text-transform:uppercase;color:var(--ink-soft);margin:0 0 9px}
@@ -2049,6 +2052,7 @@ export default function App() {
               font-size:12px;color:var(--muted);max-width:74ch}
 
         @media (max-width:900px){
+          .logo,.logo img{height:120px}
           .grid3{grid-template-columns:1fr}
           .cols{grid-template-columns:1fr}
           .panel{position:static}
@@ -2062,11 +2066,14 @@ export default function App() {
       `}</style>
 
       <div className="wrap" style={{ "--el": char ? EL[char.el].c : "#C9A227" }}>
+        <div className="logobar">
+          <span className="logo" data-ph="assets/logo/logo.png" title={ASSETS.logo()}>
+            <Img src={ASSETS.logo()} alt="Logo do jogo" />
+          </span>
+        </div>
+
         <div className="top">
           <div>
-            <span className="logo" data-ph="assets/logo/logo.png" title={ASSETS.logo()}>
-              <Img src={ASSETS.logo()} alt="Logo do jogo" />
-            </span>
             <p className="eyebrow">Ficha de campo · análise de equipe</p>
             <h1>O que consertar na sua build</h1>
             <p className="sub">
