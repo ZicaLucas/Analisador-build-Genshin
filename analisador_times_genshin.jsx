@@ -21,7 +21,7 @@ const ASSETS = {
    e o espaço reservado do container fica visível. */
 function Img({ src, fallback, alt, className }) {
   const [step, setStep] = useState(0);
-  const chain = [src, fallback].filter(Boolean);
+  const chain = [src, ...(Array.isArray(fallback) ? fallback : [fallback])].filter(Boolean);
   useEffect(() => { setStep(0); }, [src, fallback]);
   if (step >= chain.length) return null;
   return (
@@ -570,13 +570,28 @@ const APARENCIAS = {
 const aparenciasDe = (id) => APARENCIAS[baseDe(id)] || null;
 
 /* Caminho da arte considerando a aparência escolhida. */
-const arteDe = (tipo, id, apar) =>
-  ASSETS[tipo](apar ? baseDe(id) + "-" + apar : baseDe(id));
+const ehViajante = (id) => baseDe(id).startsWith("traveler");
+
+/* O Viajante é o mesmo modelo nos 7 elementos, então a arte dele é um
+   arquivo por gênero: aether.png e lumine.png. Os demais usam
+   "<id>-<aparência>.png" quando há traje escolhido. */
+const arteDe = (tipo, id, apar) => {
+  if (ehViajante(id)) return ASSETS[tipo](apar || "aether");
+  return ASSETS[tipo](apar ? baseDe(id) + "-" + apar : baseDe(id));
+};
 
 /* Reserva: se a arte da aparência não existir, cai na arte padrão do
    personagem. Serve principalmente para o Viajante, que sempre pede
    uma aparência mas pode não ter Aether/Lumine baixados ainda. */
-const arteReserva = (tipo, id) => ASSETS[tipo](baseDe(id));
+const arteReserva = (tipo, id, apar) => {
+  const r = [];
+  if (ehViajante(id)) {
+    r.push(ASSETS[tipo](baseDe(id) + "-" + (apar || "aether")));
+    r.push(ASSETS[tipo]("aether"));
+  }
+  r.push(ASSETS[tipo](baseDe(id)));
+  return r;
+};
 
 const baseDe = (id) => (CHAR_BY_ID[id] && CHAR_BY_ID[id].base) || id;
 
@@ -1842,8 +1857,8 @@ export default function App() {
         .saved{font-size:12px;color:var(--jade);align-self:center;font-family:'IBM Plex Mono',monospace}
 
         /* ---- LOGO ---- */
-        .logo{display:inline-flex;align-items:center;height:52px;margin-bottom:12px}
-        .logo img{height:52px;width:auto;object-fit:contain;display:block}
+        .logo{display:inline-flex;align-items:center;height:96px;margin-bottom:14px}
+        .logo img{height:96px;width:auto;object-fit:contain;display:block}
         .logo:not(:has(img))::before{
           content:attr(data-ph);display:flex;align-items:center;padding:0 16px;height:100%;
           font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;color:var(--brass-dim);
@@ -1894,12 +1909,12 @@ export default function App() {
 
         .sheet{background:var(--vellum);color:var(--ink);border-radius:3px;padding:20px;
                box-shadow:0 12px 34px rgba(0,0,0,.34);position:relative;overflow:hidden}
-        .sheet-art{position:absolute;top:0;right:0;height:100%;width:74%;object-fit:cover;
+        .sheet-art{position:absolute;top:0;right:0;height:100%;width:82%;object-fit:cover;
                    object-position:top center;z-index:0;pointer-events:none}
         .sheet-veil{position:absolute;inset:0;z-index:0;pointer-events:none;
           background:
-            linear-gradient(96deg,var(--vellum) 38%,rgba(237,228,207,.86) 58%,rgba(237,228,207,.30) 100%),
-            linear-gradient(to top,var(--vellum) 1%,transparent 18%)}
+            linear-gradient(94deg,var(--vellum) 32%,rgba(237,228,207,.72) 48%,rgba(237,228,207,.10) 78%,rgba(237,228,207,0) 100%),
+            linear-gradient(to top,var(--vellum) 1%,transparent 14%)}
         .sheet>*:not(.sheet-art):not(.sheet-veil){position:relative;z-index:1}
         .sheet h2,.panel h2{font-family:'Fraunces',serif;font-size:13px;font-weight:600;letter-spacing:.14em;
                text-transform:uppercase;margin:0 0 16px;padding-bottom:9px;border-bottom:1px solid rgba(27,28,34,.16)}
@@ -2069,7 +2084,7 @@ export default function App() {
               <button key={i} className="slot" data-on={i === active ? "1" : "0"}
                 style={{ "--el": c ? EL[c.el].c : "var(--brass)" }}
                 onClick={() => setActive(i)} aria-pressed={i === active}>
-                {c && <Img className="slot-art" src={arteDe("avatar", c.id, team[i].aparencia)} fallback={arteReserva("avatar", c.id)} alt="" />}
+                {c && <Img className="slot-art" src={arteDe("avatar", c.id, team[i].aparencia)} fallback={arteReserva("avatar", c.id, team[i].aparencia)} alt="" />}
                 <span className="slot-n">Membro {i + 1}</span>
                 <span className="slot-c" style={{ color: c ? EL[c.el].c : "var(--muted)" }}>
                   {c ? c.n : "vazio"}
@@ -2086,7 +2101,7 @@ export default function App() {
           <div className="sheet">
             {char && (
               <>
-                <Img className="sheet-art" src={arteDe("splash", char.id, b.aparencia)} fallback={arteReserva("splash", char.id)} alt="" />
+                <Img className="sheet-art" src={arteDe("splash", char.id, b.aparencia)} fallback={arteReserva("splash", char.id, b.aparencia)} alt="" />
                 <div className="sheet-veil" aria-hidden="true" />
               </>
             )}
@@ -2094,7 +2109,7 @@ export default function App() {
             <div className="grid3">
               <label className="lab">
                 <span>Personagem</span>
-                <Sel value={b.charId} onChange={(v) => update({ charId: v, weapon: "", aparencia: "" })}>
+                <Sel value={b.charId} onChange={(v) => update({ charId: v, weapon: "", aparencia: ehViajante(v) ? "aether" : "" })}>
                   <option value="">— escolher —</option>
                   {Object.keys(EL).map((el) => (
                     <optgroup key={el} label={EL[el].n}>
