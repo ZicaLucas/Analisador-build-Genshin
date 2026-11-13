@@ -530,7 +530,12 @@ const CHAR_BY_ID = Object.fromEntries(CHARS.map((c) => [c.id, c]));
 /* Um personagem pode ter várias variantes de papel (DPS, suporte...).
    Cada variante tem id próprio, e `base` aponta para o personagem real,
    que é a chave de BASE, CONS, ASSINATURA e DANO. */
-const APAR_VIAJANTE = [{ k: "aether", rot: "Aether" }, { k: "lumine", rot: "Lumine" }];
+const APAR_VIAJANTE = [
+  { k: "aether", rot: "Aether" },
+  { k: "aether-heaven-earth", rot: "Aether · As Heaven and Earth Are Made Anew" },
+  { k: "lumine", rot: "Lumine" },
+  { k: "lumine-heaven-earth", rot: "Lumine · As Heaven and Earth Are Made Anew" },
+];
 
 /* Aparências alternativas. Mudam só a imagem, nunca os números.
    Os Viajantes trocam entre Aether e Lumine; os demais têm trajes.
@@ -587,7 +592,8 @@ const arteReserva = (tipo, id, apar) => {
   const r = [];
   if (ehViajante(id)) {
     r.push(ASSETS[tipo](baseDe(id) + "-" + (apar || "aether")));
-    r.push(ASSETS[tipo]("aether"));
+    /* traje do Viajante cai no gênero correspondente */
+    r.push(ASSETS[tipo](String(apar || "aether").startsWith("lumine") ? "lumine" : "aether"));
   }
   r.push(ASSETS[tipo](baseDe(id)));
   return r;
