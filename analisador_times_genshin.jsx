@@ -1988,6 +1988,7 @@ export default function App() {
         .iss-area{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding-top:2px}
         .iss-msg{color:#D6DAE8}
 
+        .embreve{font-family:'Fraunces',serif;font-size:19px;letter-spacing:.04em;color:var(--brass);padding:34px 0}
         .empty{color:var(--muted);font-size:14px;padding:22px 0;text-align:center;
                border:1px dashed var(--slate2);border-radius:3px}
         .teamsec{margin-top:20px}
@@ -2419,11 +2420,7 @@ export default function App() {
           </div>
 
           {dps.comRotacao.length === 0 ? (
-            <p className="empty">
-              Nenhum membro do time tem rotação definida ainda. Rotações ficam em{" "}
-              <code>ROTACOES</code>, no topo do arquivo — hoje só a Hu Tao está lá, como exemplo.
-              Depois de adicionar, rode <code>node gerar-dados.cjs</code>.
-            </p>
+            <p className="empty embreve">Em breve</p>
           ) : (
             <>
               <table className="dpstab">
